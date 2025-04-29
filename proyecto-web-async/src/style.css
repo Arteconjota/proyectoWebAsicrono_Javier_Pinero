@@ -166,41 +166,11 @@ h1 {
   border-radius: 10px;
 }
 
-/* #container {
-  display: flex;
-  flex-wrap: wrap;
-
-  text-align: center;
-  margin-left: 66px;
-  gap: 20px;
-}
-
-#container > img {
-  width: 15em;
-  height: auto;
-} */
-
-/* #container {
-  display: grid;
-  width: calc(100vw - 66px);
-  min-height: 100vh;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-  padding: 0 2rem;
-  box-sizing: border-box;
-}
-
-#container img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-} */
-
 #container {
   width: calc(100vw - 66px);
   padding: 0 2rem;
   margin-left: 66px;
-  columns: 6;
+  columns: 5;
   column-gap: 20px;
 }
 
@@ -215,4 +185,15 @@ h1 {
   max-width: 100%;
   min-width: 100%;
   border-radius: 15px;
+}
+
+#container img:hover {
+  transition: 0.2s;
+  box-shadow: 0 0 10px red;
+  cursor: pointer;
+}
+
+h3 {
+  padding: 20px;
+  width: fit-content;
 }
