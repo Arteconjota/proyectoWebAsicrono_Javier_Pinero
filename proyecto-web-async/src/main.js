@@ -32,11 +32,28 @@ menuButton.addEventListener("click", () => {
   menu.classList.toggle("show");
 });
 
-//   <div>
-//     <h1>Hello Vite!</h1>
-//     <div class="card">
-//     </div>
-//     <p class="read-the-docs">
-//       Click on the Vite logo to learn more
-//     </p>
-//   </div>
+const apiUrl = "https://api.unsplash.com/search/photos";
+const keyApi = "wnJXpQ-TJgCefPwUNdsl5-HRTPEsgR4GJkhBh1f8woM";
+
+const searchPhotos = (keyword) => {
+  fetch(
+    `${apiUrl}?client_id=${keyApi}&page=1&per_page=20&query=${keyword}`
+  )
+  
+  .then((res) => res.json()).then((res) => {
+    const photos = res.results;
+    printPhotos(photos);
+  })
+};
+
+const printPhotos = (photos) => {
+  const container = document.querySelector("#container");
+  for (const photo of photos) {
+    container.innerHTML +=
+    `<div id="box">
+      <img src="${photo.urls.regular}" alt="${photo.alt_description}"></img>
+    </div>`
+  };
+};
+
+searchPhotos("cat");

@@ -7,6 +7,7 @@
 body {
   margin: 0;
   display: flex;
+  flex-direction: column;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
@@ -14,7 +15,8 @@ body {
 }
 
 nav {
-  position: absolute;
+  position: fixed;
+  left: 0;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -54,7 +56,7 @@ h1 {
 #app {
   display: flex;
   width: calc(100vw - 66px);
-  min-height: 100vh;
+  height: fit-content;
   padding: 2rem;
   text-align: center;
   margin-left: 66px;
@@ -123,6 +125,7 @@ h1 {
   background-color: white;
   width: 30px;
   height: 30px;
+  cursor: pointer;
 }
 
 .menu-button:hover {
@@ -161,4 +164,55 @@ h1 {
 .enlacesMenu > a:hover {
   background-color: #cccccc9a;
   border-radius: 10px;
+}
+
+/* #container {
+  display: flex;
+  flex-wrap: wrap;
+
+  text-align: center;
+  margin-left: 66px;
+  gap: 20px;
+}
+
+#container > img {
+  width: 15em;
+  height: auto;
+} */
+
+/* #container {
+  display: grid;
+  width: calc(100vw - 66px);
+  min-height: 100vh;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+#container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+} */
+
+#container {
+  width: calc(100vw - 66px);
+  padding: 0 2rem;
+  margin-left: 66px;
+  columns: 6;
+  column-gap: 20px;
+}
+
+#container #box {
+  width: 100%;
+  margin-bottom: 10px;
+  break-inside: avoid;
+  border-radius: 15px;
+}
+
+#container img {
+  max-width: 100%;
+  min-width: 100%;
+  border-radius: 15px;
 }
